@@ -1,0 +1,11 @@
+[package]
+name = "kaios_examples"
+version = "0.0.0"
+edition = "2018"
+
+[dev-dependencies]
+macroquad = { git = "https://github.com/not-fl3/macroquad.git" }
+miniquad = { git = "https://github.com/not-fl3/miniquad.git" }
+
+[patch.crates-io]
+miniquad = { git = "https://github.com/not-fl3/miniquad.git" } # keep in sync with above

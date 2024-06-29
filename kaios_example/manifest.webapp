@@ -1,0 +1,15 @@
+{
+	"name": "miniquad snake",
+	"description": "miniquad snake",
+	"type": "certified",
+	"origin": "app://snake.birh.burh",
+	"permissions": {
+		"engmode-extension": {}
+	},
+	"icons": {
+		"56": "/icon56.png"
+	},
+	"theme_color": "#ff4411",
+	"launch_path": "/index.html",
+	"fullscreen": true
+}
