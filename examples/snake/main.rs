@@ -33,16 +33,16 @@ async fn main() {
 
     loop {
         if !game_over {
-            if is_key_down(KeyCode::Right) && snake.dir != left && !navigation_lock {
+            if (is_key_down(KeyCode::Right) || is_key_down(KeyCode::Key6)) && snake.dir != left && !navigation_lock {
                 snake.dir = right;
                 navigation_lock = true;
-            } else if is_key_down(KeyCode::Left) && snake.dir != right && !navigation_lock {
+            } else if (is_key_down(KeyCode::Left) || is_key_down(KeyCode::Key4)) && snake.dir != right && !navigation_lock {
                 snake.dir = left;
                 navigation_lock = true;
-            } else if is_key_down(KeyCode::Up) && snake.dir != down && !navigation_lock {
+            } else if (is_key_down(KeyCode::Up) || is_key_down(KeyCode::Key2)) && snake.dir != down && !navigation_lock {
                 snake.dir = up;
                 navigation_lock = true;
-            } else if is_key_down(KeyCode::Down) && snake.dir != up && !navigation_lock {
+            } else if (is_key_down(KeyCode::Down) || is_key_down(KeyCode::Key8)) && snake.dir != up && !navigation_lock {
                 snake.dir = down;
                 navigation_lock = true;
             }
@@ -134,19 +134,31 @@ async fn main() {
             draw_text(format!("SCORE: {score}").as_str(), 10., 20., 20., DARKGRAY);
         } else {
             clear_background(WHITE);
-            let text = "Game Over. Press [enter] to play again.";
-            let font_size = 30.;
-            let text_size = measure_text(text, None, font_size as _, 1.0);
+            let first_line = "Game Over.";
+            let first_line_font_size = 30.;
+            let first_line_size = measure_text(first_line, None, first_line_font_size as _, 1.0);
+
+            let second_line = "Press 5 to play again.";
+            let second_line_font_size = 20.;
+            let second_line_size = measure_text(second_line, None, second_line_font_size as _, 1.0);
 
             draw_text(
-                text,
-                screen_width() / 2. - text_size.width / 2.,
-                screen_height() / 2. + text_size.height / 2.,
-                font_size,
+                first_line,
+                screen_width() / 2. - first_line_size.width / 2.,
+                screen_height() / 2. + (first_line_size.height + second_line_size.height + 10.) / 2. - second_line_size.height / 2. - 10.,
+                first_line_font_size,
                 DARKGRAY,
             );
 
-            if is_key_down(KeyCode::Enter) {
+            draw_text(
+                second_line,
+                screen_width() / 2. - second_line_size.width / 2.,
+                screen_height() / 2. + (second_line_size.height + second_line_size.height + 10.) / 2.,
+                second_line_font_size,
+                DARKGRAY,
+            );
+
+            if is_key_down(KeyCode::Enter) || is_key_down(KeyCode::Key5) {
                 snake = Snake {
                     head: (0, 0),
                     dir: (1, 0),

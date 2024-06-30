@@ -1,15 +1,15 @@
 {
-	"name": "miniquad snake",
-	"description": "miniquad snake",
+	"name": "Ferris",
+	"description": "miniquad Ferris image",
 	"type": "certified",
-	"origin": "app://snake.birh.burh",
+	"origin": "app://ferris.birh.burh",
 	"permissions": {
 		"engmode-extension": {}
 	},
 	"icons": {
 		"56": "/icon56.png"
 	},
-	"theme_color": "#ff4411",
+	"theme_color": "#ffffff",
 	"launch_path": "/index.html",
 	"fullscreen": true
 }

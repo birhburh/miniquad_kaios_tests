@@ -1,6 +1,5 @@
 {
 	"name": "Quad",
-	"cursor": true,
 	"description": "miniquad Quad",
 	"type": "certified",
 	"origin": "app://quad.birh.burh",

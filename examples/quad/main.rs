@@ -123,7 +123,7 @@ fn main() {
     } else {
         conf::AppleGfxApi::OpenGl
     };
-    conf.platform.webgl_version = conf::WebGLVersion::WebGL2;
+    conf.platform.webgl_version = conf::WebGLVersion::WebGL1;
 
     miniquad::start(conf, move || Box::new(Stage::new()));
 }

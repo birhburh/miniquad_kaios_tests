@@ -7,7 +7,6 @@ window.MyLogs = {
         return this.queue.shift(1);
     },
 };
-
 var console=(function(oldCons){
 return {
     debug: function(text){
@@ -29,7 +28,11 @@ return {
     error: function (text) {
         oldCons.error(text);
         window.MyLogs.write("ERROR: " + text);
-    }
+    },
+    assert: function(val, text){
+        window.MyLogs.write(`ASSERT: ${val}: ${text}`);
+        oldCons.assert(val, text);
+    },
 };
 }(window.console));
 window.console = console;

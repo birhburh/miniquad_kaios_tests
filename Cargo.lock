@@ -174,7 +174,7 @@ dependencies = [
 [[package]]
 name = "miniquad"
 version = "0.4.4"
-source = "git+https://github.com/not-fl3/miniquad.git#3f251c7eccc74052906418bea7e19e34ce09131a"
+source = "git+https://github.com/not-fl3/miniquad.git#6ea5c3abf8a926d533deba5812c233aa8b183324"
 dependencies = [
  "libc",
  "ndk-sys",
