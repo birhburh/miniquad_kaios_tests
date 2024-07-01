@@ -57,6 +57,6 @@ uglifyjs -b <wasm2js_example/mq_js_bundle.js >wasm2js_example/mq_js_bundle.js.ne
 
 cargo build --example=$example_name --target=wasm32-unknown-unknown --release
 # install binaryen's wasm2js (or just build it and add to PATH)
-wasm2js target/wasm32-unknown-unknown/release/examples/$example_name.wasm -o wasm2js_example/example.wasm.js
+wasm2js -Oz target/wasm32-unknown-unknown/release/examples/$example_name.wasm -o wasm2js_example/example.wasm.js
 # osx have bsd-s sed so yeah
 sed "s/import \* as env from 'env';/var env = importObject.env;/" wasm2js_example/example.wasm.js >wasm2js_example/example.wasm.js.temp && mv wasm2js_example/example.wasm.js.temp wasm2js_example/example.wasm.js

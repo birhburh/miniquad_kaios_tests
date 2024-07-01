@@ -1,0 +1,16 @@
+{
+	"name": "Egui Demo",
+	"description": "miniquad egui demo",
+	"cursor": true,
+	"type": "certified",
+	"origin": "app://egui.birh.burh",
+	"permissions": {
+		"engmode-extension": {}
+	},
+	"icons": {
+		"56": "/icon56.png"
+	},
+	"theme_color": "#ffffff",
+	"launch_path": "/index.html",
+	"fullscreen": true
+}

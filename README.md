@@ -6,6 +6,7 @@ Yeah, KaiOS
 - [snake](https://github.com/not-fl3/macroquad/blob/master/examples/snake.rs)
 - [quad](https://github.com/not-fl3/miniquad/blob/master/examples/quad.rs)
 - [ferris](https://github.com/not-fl3/miniquad/blob/master/examples/texture.rs)
+- [egui](https://github.com/birhburh/egui-miniquad/blob/master/examples/demo.rs)
 - [tic-tac-toe](https://github.com/birhburh/macroquad_tic_tac_toe) in a separate repository
 
 ## Run as:
@@ -16,4 +17,5 @@ Yeah, KaiOS
 # Credits:
 - [snake icon](https://www.flaticon.com/free-icon/snake_616653)
 - [macroquad icon](https://github.com/not-fl3/macroquad-website/blob/source/static/favicon-32x32.png)
+- [widgets icon](https://www.flaticon.com/free-icon/widget_11244686)
 - ferris icon (copied from macroquad, but Rust Foundation or something)

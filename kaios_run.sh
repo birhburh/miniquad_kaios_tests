@@ -29,6 +29,7 @@ mv kaios_example/mq_js_bundle.js.new kaios_example/mq_js_bundle.js
 
 cat >kaios_example/example.wasm.js.new <<- EOM
     console.log("RUNNING example.wasm.js.new!");
+
     define(function(require, exports, module) {
         console.log("RUNNING INSIDE define!");
 EOM
@@ -52,11 +53,11 @@ echo $id
 gdeploy start $id
 repeats=0
 while true; do
-    line=$(gdeploy evaluate $id "window.MyLogs.read()" | tail -n +3 | sed 's/Script run in the tic-tac-toe.birh.burh app context evaluated to: //')
+    line=$(gdeploy evaluate $id "window.MyLogs.read()" | tail -n +3 | sed "s/Script run in the $id app context evaluated to: //")
     if [ "$line" = '{ type: '\''undefined'\'' }' ]; then
         sleep 0.1
         (( repeats++ ))
-        if [ $repeats -gt 100 ]; then
+        if [ $repeats -gt 50 ]; then
             break
         fi
     else
